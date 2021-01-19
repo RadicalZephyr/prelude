@@ -152,7 +152,8 @@
 (require 'super-save)
 ;; add integration with ace-window
 (add-to-list 'super-save-triggers 'ace-window)
-(super-save-mode +1)
+;; Disable because it behaves badly with rust-format-on-save
+;; (super-save-mode +1)
 
 (defadvice set-buffer-major-mode (after set-major-mode activate compile)
   "Set buffer major mode according to `auto-mode-alist'."
