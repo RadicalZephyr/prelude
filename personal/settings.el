@@ -20,7 +20,6 @@
 
 ;; Packages and Stuff
 (prelude-require-packages '(;; Great utilities
-                            color-theme
                             exec-path-from-shell
                             git-timemachine
                             lentic
