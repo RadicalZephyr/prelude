@@ -4,11 +4,11 @@
 
 ;;; Code:
 
-(prelude-require-packages '(rust-mode flycheck-rust flycheck-inline racer company-racer toml-mode))
+(prelude-require-packages '(lsp-mode rustic flycheck-rust flycheck-inline toml-mode))
 
 (require 'compile)
-(require 'rust-mode)
-(require 'racer)
+(require 'lsp-mode)
+(require 'rustic)
 (require 'toml-mode)
 
 ;; Racer setup
@@ -16,7 +16,8 @@
 (setq racer-cmd (concat home-dir "/.cargo/bin/racer")
       racer-rust-src-path (concat home-dir "/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src")
       rust-format-on-save t
-      rust-rustfmt-bin "rustfmt")
+      rust-rustfmt-bin "rustfmt"
+      lsp-rust-server 'rust-analyzer)
 
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (define-key rust-mode-map (kbd "C-c C-c M-k") #'cargo-process-clippy)
@@ -25,7 +26,7 @@
 
 (add-hook 'toml-mode-hook #'cargo-minor-mode)
 
-(add-hook 'racer-mode-hook #'company-mode)
+;; (add-hook 'racer-mode-hook #'company-mode)
 
 (defun radz-deactivate-exec-save ()
   (remove-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p))
