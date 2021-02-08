@@ -6,7 +6,9 @@
 
 ;;; Code:
 
+(prelude-require-packages '(rg))
 (require 'rg)
+
 (rg-enable-menu (kbd "C-c c s"))
 
 (global-set-key (kbd "C-x C-b") 'switch-to-buffer)
@@ -63,4 +65,5 @@
                   (scroll-up 1)))
 
 (global-set-key (kbd "M-`") 'other-frame)
+
 ;;; keys.el ends here
