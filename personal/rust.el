@@ -4,19 +4,29 @@
 
 ;;; Code:
 
-(prelude-require-packages '(lsp-mode rustic flycheck-rust flycheck-inline toml-mode))
+(prelude-require-packages '(lsp-mode rustic flycheck-rust toml-mode))
 
 (require 'compile)
 (require 'lsp-mode)
 (require 'rustic)
 (require 'toml-mode)
 
+;; Change compile mode faces
+
+(custom-set-faces
+ '(rustic-compilation-column ((t (:inherit compilation-column-number))))
+ '(rustic-compilation-line ((t (:foreground "LimeGreen"))))
+ '(rustic-message ((t (:inherit compilation-message))))
+ '(rustic-compilation-error ((t (:inherit compilation-error))))
+ '(rustic-compilation-warning ((t (:inherit compilation-warning))))
+ '(rustic-compilation-info ((t (:inherit compilation-info)))))
+
 ;; Racer setup
 
 (setq racer-cmd (concat home-dir "/.cargo/bin/racer")
       racer-rust-src-path (concat home-dir "/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src")
-      rust-format-on-save t
-      rust-rustfmt-bin "rustfmt"
+      rustic-format-on-save t
+      rustic-rustfmt-bin "rustfmt"
       lsp-rust-server 'rust-analyzer)
 
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
@@ -43,8 +53,8 @@
 
 ;; Flycheck Inline Setup
 
-(with-eval-after-load 'flycheck
-  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+;; (with-eval-after-load 'flycheck
+;;   (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
 
 ;; Relative import grouping
 
