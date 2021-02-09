@@ -24,6 +24,9 @@
 (global-set-key (kbd "C-c c o") 'occur)
 (global-set-key (kbd "C-c c l") #'sort-lines)
 
+(global-set-key (kbd "C-c C-l d") 'lsp-execute-code-action)
+(global-set-key (kbd "C-c C-l e") 'lsp-rust-analyzer-expand-macro)
+
 (global-set-key (kbd "C-c m l") #'mc/edit-lines)
 (global-set-key (kbd "C-c m a") #'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-c m e") #'mc/edit-ends-of-lines)
