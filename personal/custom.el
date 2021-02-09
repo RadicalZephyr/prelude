@@ -13,10 +13,20 @@
  '(package-selected-packages
    '(lsp-mode rustic flycheck-inline tide rg avy-flycheck racket-mode shen-mode slime-company lentic powershell handlebars-mode mustache-mode pipenv haskell-mode lua-mode elm-mode kaolin-themes go-mode d-mode xclip salt-mode floobits solarized-theme systemd csv-mode pytest nginx-mode dockerfile-mode elixir-mode fsharp-mode csharp-mode paradox gh-md gnuplot erefactor batch-mode aggressive-indent flycheck-color-mode-line flycheck-tip ess-smart-underscore ess ruby-refactor ruby-guard rubocop rspec-mode robe rinari rbenv php-mode flymake-php cmake-mode golden-ratio yatemplate clojure-snippets java-snippets markdown-mode+ markdown-mode clojure-cheatsheet cljsbuild-mode clj-refactor common-lisp-snippets slime exec-path-from-shell smart-tab paredit magit-filenotify color-theme toml-mode company-racer racer flycheck-rust rustfmt rust-mode jasminejs-mode yaml-mode web-mode geiser yari inf-ruby ruby-tools company-anaconda anaconda-mode flycheck-ocaml merlin utop tuareg company-auctex cdlatex auctex js2-mode rainbow-mode elisp-slime-nav cider clojure-mode rainbow-delimiters company smex ido-ubiquitous flx-ido zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window))
  '(paradox-automatically-star t)
+ '(rustic-ansi-faces
+   ["#192033" "#e53636" "#62b662" "#df7834" "#5d98e0" "#c16fa7" "#5dc4c8" "#7E8A90"])
  '(search-whitespace-regexp "[ 	]+"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(lsp-face-highlight-textual ((t (:inherit highlight :weight bold))))
+ '(lsp-lsp-flycheck-info-unnecessary-face ((t (:underline (:color "#93E0E3" :style wave)))) t)
+ '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:underline (:color "#F0DFAF" :style wave)))) t)
+ '(rustic-compilation-column ((t (:inherit compilation-column-number))))
+ '(rustic-compilation-error ((t (:inherit compilation-error))))
+ '(rustic-compilation-info ((t (:inherit compilation-info))))
+ '(rustic-compilation-line ((t (:foreground "#62b662"))))
+ '(rustic-compilation-warning ((t (:inherit compilation-warning))))
+ '(rustic-message ((t (:inherit compilation-message)))))
