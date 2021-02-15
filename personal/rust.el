@@ -27,7 +27,9 @@
       racer-rust-src-path (concat home-dir "/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src")
       rustic-format-on-save t
       rustic-rustfmt-bin "rustfmt"
-      lsp-rust-server 'rust-analyzer)
+      lsp-rust-server 'rust-analyzer
+      lsp-rust-analyzer-cargo-load-out-dirs-from-check t
+      lsp-rust-analyzer-proc-macro-enable t)
 
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (define-key rust-mode-map (kbd "C-c C-c M-k") #'cargo-process-clippy)
