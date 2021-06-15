@@ -82,7 +82,7 @@
     operate-on-number
     smartparens
     smartrep
-    super-save
+;;    super-save ;; disable because it plays badly with rust-mode
     undo-tree
     volatile-highlights
     which-key
